@@ -39,9 +39,16 @@
                 </a>
             @endif
 
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
+        <x-primary-button class="ms-3 bg-[#e6c068] text-gray-900 font-bold hover:bg-yellow-400 transition">
+            {{ __('Log in') }}
+        </x-primary-button>
+
         </div>
     </form>
+    <div class="flex justify-center mt-8">
+        <a href="{{ route('register') }}" 
+            class="bg-[#e6c068] text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
+            Register Now
+        </a>
+    </div>
 </x-guest-layout>

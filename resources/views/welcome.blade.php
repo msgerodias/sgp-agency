@@ -56,8 +56,8 @@
                 SGP
             </a>
             <div class="hidden md:flex space-x-4 items-center">
-                <a href="#about" class="hover:gold-text transition duration-300">About Us</a>
-                <a href="#services" class="hover:gold-text transition duration-300">Services</a>
+                <a href="#about" class="hover:gold-text transition duration-300">Hiring</a>
+                <a href="#services" class="hover:gold-text transition duration-300">About Us</a>
                 <a href="#contact" class="hover:gold-text transition duration-300">Contact</a>
 
                 @if (Route::has('login'))
@@ -105,102 +105,116 @@
             </a>
         </section>
 
-        <section id="about" class="py-20 md:py-32 container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold gold-text mb-8 text-center">About Our Agency</h2>
+        <section id="about" class="flex justify-center">
+            <img src="images/hiring.png" alt="Now Hiring" class="w-full">
+        </section>
 
-            <div class="flex flex-col md:flex-row items-stretch bg-gray-800 rounded-lg shadow-xl border gold-border overflow-hidden">
-                <!-- Left Image (smaller width) -->
-                <div class="md:w-1/3 h-60 md:h-auto">
-                    <img src="{{ asset('images/company.png') }}" alt="Company" class="w-full h-full object-cover">
+        <section id="services" class="py-20 md:py-32 bg-gray-800">
+            <div class="w-[90%] mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold gold-text mb-8 text-center">
+                    About Our Agency
+                </h2>
+
+                <div class="flex flex-col md:flex-row items-stretch bg-gray-800 rounded-lg shadow-xl border gold-border overflow-hidden">
+                    <!-- Left Image -->
+                    <div class="md:w-1/4 h-60 md:h-auto">
+                        <img src="{{ asset('images/company.png') }}" alt="Company" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="md:w-3/4 p-8 flex flex-col justify-center">
+                        <p class="text-lg mb-4 text-gray-300 leading-relaxed">
+                            <strong>Confederal Project Manpower Services, Inc.</strong> (CPMSI) is a trusted manpower agency located at 
+                            <strong>1653-A Taft Avenue, Malate, Manila, Philippines</strong>, proudly holding 
+                            <strong>POEA License No. 100-LB-090722-R</strong>. For several years, we have successfully deployed 
+                            qualified applicants abroad, helping them achieve their dreams and improve their lives.
+                        </p>
+
+                        <p class="text-lg mb-4 text-gray-300 leading-relaxed">
+                            <strong>SGP</strong> (Secure Global Placement) is an innovative initiative by <strong>CPMSI</strong> (Confederal Project Manpower Services Inc.) aimed at streamlining the search for aspiring applicants across the Philippines. Through SGP, we connect them with global opportunities faster and more efficiently.
+                        </p>
+                        <p class="text-lg mb-4 text-gray-300 leading-relaxed">
+                            We conduct the <strong>initial interviews</strong> to ensure only qualified candidates proceed to the next stages, saving both applicants and employers valuable time.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            We provide complete assistance to our applicants — from passport processing, travel fare to Manila, 
+                            accommodation, daily allowance, and training, all the way until they successfully fly abroad. 
+                            And the best part — <strong>everything is FREE</strong>.
+                        </p>
+                    </div>
                 </div>
-
-                <!-- Right Content (more space) -->
-                <div class="md:w-2/3 p-8 flex flex-col justify-center">
-                    <p class="text-lg mb-4 text-gray-300 leading-relaxed">
-                        <strong>SGP</strong> (Secure Global Placement) is an innovative initiative by <strong>CPMSI</strong> (Confederal Project Manpower Services Inc.) aimed at streamlining the search for aspiring applicants across the Philippines. Through SGP, we connect them with global opportunities faster and more efficiently.
-                    </p>
-                    <p class="text-lg mb-4 text-gray-300 leading-relaxed">
-                        We conduct the <strong>initial interviews</strong> to ensure only qualified candidates proceed to the next stages, saving both applicants and employers valuable time.
-                    </p>
-                    <p class="text-lg text-gray-300 leading-relaxed">
-                        Using our secure online platform, we make sure applicants’ information is stored safely and they are updated in real-time about their application status — never leaving them hanging.
-                    </p>
-                </div>
-
             </div>
         </section>
 
-
-<!-- Services Section -->
-<section id="services" class="py-20 md:py-32 bg-gray-800">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold gold-text mb-12">Our Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            
-            <!-- Service 1 -->
-            <div class="bg-gray-900 p-8 rounded-lg shadow-xl border gold-border transform hover:scale-105 transition duration-300">
-                <svg class="w-16 h-16 gold-text mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
-                </svg>
-                <h3 class="text-xl font-semibold gold-text mb-2">Applicant Screening & Initial Interviews</h3>
-                <p class="text-gray-300">
-                    We conduct thorough initial interviews to ensure only qualified and prepared applicants move forward, helping both candidates and employers save valuable time.
-                </p>
-            </div>
-            
-            <!-- Service 2 -->
-            <div class="bg-gray-900 p-8 rounded-lg shadow-xl border gold-border transform hover:scale-105 transition duration-300">
-                <svg class="w-16 h-16 gold-text mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 13c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
-                </svg>
-                <h3 class="text-xl font-semibold gold-text mb-2">Real-Time Application Tracking</h3>
-                <p class="text-gray-300">
-                    Our online platform securely stores applicant information and provides real-time updates, ensuring no candidate is left wondering about their status.
-                </p>
-            </div>
-            
-            <!-- Service 3 -->
-            <div class="bg-gray-900 p-8 rounded-lg shadow-xl border gold-border transform hover:scale-105 transition duration-300">
-                <svg class="w-16 h-16 gold-text mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3s-3 1.34-3 3c0 .35.07.69.18 1H8c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3s-3 1.34-3 3c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-3c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM5 5c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm15 14H4V8h16v11z"></path>
-                </svg>
-                <h3 class="text-xl font-semibold gold-text mb-2">Overseas Placement & Support</h3>
-                <p class="text-gray-300">
-                    From matching applicants with international employers to assisting with visa and travel requirements, we ensure a smooth journey to global opportunities.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
         <!-- Contact Section -->
-        <section id="contact" class="py-20 md:py-32 container mx-auto px-4">
-            <div class="max-w-xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold gold-text mb-12">Contact Us</h2>
-                <div class="bg-gray-800 p-8 rounded-lg shadow-xl border gold-border">
-                    <form id="contact-form" class="space-y-6">
-                        <div>
-                            <input type="text" id="name" placeholder="Your Name" class="w-full p-3 rounded-lg bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 border border-gray-600" required>
+        <section id="contact" class="py-20 md:py-32 bg-gray-900 text-white">
+            <div class="w-[90%] max-w-6xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-yellow-500 mb-12">Contact Us</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+                    <div class="space-y-6">
+                        <a href="https://facebook.com/YOUR_PAGE" target="_blank" class="block">
+                            <div class="flex items-center p-6 bg-gray-800 rounded-lg shadow-xl border border-yellow-500 transition duration-300 ease-in-out hover:bg-gray-700">
+                                <div class="w-12 h-12 flex items-center justify-center bg-yellow-500 text-gray-900 rounded-full flex-shrink-0">
+                                    <i class="fab fa-facebook-f text-xl"></i>
+                                </div>
+                                <div class="ml-6 text-left">
+                                    <h3 class="text-lg font-semibold text-yellow-500">Facebook</h3>
+                                    <p class="text-gray-300">Visit our Facebook Page</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="tel:+639XXXXXXXXX" class="block">
+                            <div class="flex items-center p-6 bg-gray-800 rounded-lg shadow-xl border border-yellow-500 transition duration-300 ease-in-out hover:bg-gray-700">
+                                <div class="w-12 h-12 flex items-center justify-center bg-yellow-500 text-gray-900 rounded-full flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                                <div class="ml-6 text-left">
+                                    <h3 class="text-lg font-semibold text-yellow-500">Phone</h3>
+                                    <p class="text-gray-300">+63 9XX XXX XXXX</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="mailto:youremail@example.com" class="block">
+                            <div class="flex items-center p-6 bg-gray-800 rounded-lg shadow-xl border border-yellow-500 transition duration-300 ease-in-out hover:bg-gray-700">
+                                <div class="w-12 h-12 flex items-center justify-center bg-yellow-500 text-gray-900 rounded-full flex-shrink-0">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div class="ml-6 text-left">
+                                    <h3 class="text-lg font-semibold text-yellow-500">Email</h3>
+                                    <p class="text-gray-300">youremail@example.com</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center p-6 bg-gray-800 rounded-lg shadow-xl border border-yellow-500">
+                            <div class="w-12 h-12 flex items-center justify-center bg-yellow-500 text-gray-900 rounded-full flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div class="ml-6 text-left">
+                                <h3 class="text-lg font-semibold text-yellow-500">Address</h3>
+                                <p class="text-gray-300">Confederal Project Manpower Services Inc., 1653-A Taft Avenue, Malate, Manila</p>
+                            </div>
                         </div>
-                        <div>
-                            <input type="email" id="email" placeholder="Your Email" class="w-full p-3 rounded-lg bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 border border-gray-600" required>
-                        </div>
-                        <div>
-                            <textarea id="message" rows="5" placeholder="Your Message" class="w-full p-3 rounded-lg bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 border border-gray-600" required></textarea>
-                        </div>
-                        <button type="submit" class="w-full gold-bg text-gray-900 font-bold py-3 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
-                            Send Message
-                        </button>
-                    </form>
-                    <div id="form-message" class="mt-6 hidden text-center p-4 rounded-lg gold-bg text-gray-900 font-bold">
-                        Thank you for your message! We will get back to you shortly.
+                    </div>
+
+                    <div class="w-full h-120 rounded-lg overflow-hidden border border-yellow-500 shadow-xl">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.4145989020053!2d120.98591567515177!3d14.575435685907955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9876ffc33ad%3A0xf26432bb3952784a!2sConfederal%20Project!5e0!3m2!1sen!2sph!4v1755045087899!5m2!1sen!2sph" width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <div class="flex justify-center mt-8">
+        <a href="{{ route('register') }}" 
+            class="gold-bg text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
+            Apply Now
+        </a>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 py-8 text-center text-gray-400">
