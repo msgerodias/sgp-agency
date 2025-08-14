@@ -22,8 +22,8 @@ class DashboardController extends Controller
         // Required attachments
         $requiredAttachments = [
             'picture',
-            'valid_id_1',
-            'valid_id_2',
+            'valid_ID_1',
+            'valid_ID_2',
             'psa_birth_certificate',
             'passport',
             'medical',
@@ -33,11 +33,21 @@ class DashboardController extends Controller
         // Fetch user's attachments
         $attachments = ProfileAttachment::where('profile_id', optional($profile)->id)->get();
 
+        // Fetch user's applications
+        $applications = \App\Models\Application::where('user_id', $user->id)
+            ->latest()
+            ->get();
+
+        // Check if user already applied
+        $hasApplied = $applications->isNotEmpty();
+
         return view('dashboard', compact(
             'isProfileComplete',
             'profile',
             'requiredAttachments',
-            'attachments'
+            'attachments',
+            'applications',
+            'hasApplied'
         ));
     }
 

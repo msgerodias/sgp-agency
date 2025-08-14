@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileAttachmentController;
+use App\Http\Controllers\ApplicationController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,6 +24,8 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/profile/{profile}/attachment', [ProfileAttachmentController::class, 'store'])->name('profile.attachment.store');
     Route::delete('/profile/attachment/{attachment}', [ProfileAttachmentController::class, 'destroy'])->name('profile.attachment.destroy');
+    Route::get('/apply', [ApplicationController::class, 'create'])->name('applications.create');
+    Route::post('/apply', [ApplicationController::class, 'store'])->name('applications.store');
 });
 
 
