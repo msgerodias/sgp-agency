@@ -19,7 +19,9 @@ class AuthenticationTest extends TestCase
 
     public function test_users_can_authenticate_using_the_login_screen(): void
     {
-        $user = User::factory()->create();
+        $user = User::factory()->create([
+            'role' => 'applicant', // default for this test
+        ]);
 
         $response = $this->post('/login', [
             'email' => $user->email,
@@ -27,8 +29,15 @@ class AuthenticationTest extends TestCase
         ]);
 
         $this->assertAuthenticated();
-        $response->assertRedirect(route('dashboard', absolute: false));
+
+        // Redirect based on role
+        $expectedRoute = $user->role === 'admin'
+            ? route('admin.dashboard', absolute: false)
+            : route('dashboard', absolute: false);
+
+        $response->assertRedirect($expectedRoute);
     }
+
 
     public function test_users_can_not_authenticate_with_invalid_password(): void
     {

@@ -96,14 +96,23 @@
     <main>
         <!-- Hero Section -->
         <section id="hero" 
-                class="relative h-screen" 
-                style="background-image: url('{{ asset('images/background.png') }}'); background-size: cover; background-position: center;">
-            
+            class="relative h-screen" 
+            style="background-image: url('{{ asset('images/background.png') }}'); background-size: cover; background-position: center;">
+
+            <style>
+                @media (max-width: 768px) {
+                    #hero {
+                        background-image: url('{{ asset('images/mobile.png') }}') !important;
+                    }
+                }
+            </style>
+
             <a href="{{ route('register') }}" 
             class="absolute bottom-[2%] left-[25%] gold-bg text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
                 Apply Now
             </a>
         </section>
+
 
         <section id="about" class="flex justify-center">
             <img src="images/hiring.png" alt="Now Hiring" class="w-full">

@@ -13,6 +13,10 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
 
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        }
+
         // Get applicant profile
         $profile = Profile::where('user_id', $user->id)->first();
 
