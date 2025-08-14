@@ -1,60 +1,86 @@
 <?php
 
+// app/Http/Controllers/ProfileController.php
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Http\RedirectResponse;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
-    public function edit(Request $request): View
+    // Show the profile form (create or edit)
+    public function edit()
     {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        $profile = Profile::where('user_id', Auth::id())->first();
+        return view('applicant.profile.edit', compact('profile'));
     }
 
-    /**
-     * Update the user's profile information.
-     */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    // Store new profile
+    public function store(Request $request)
     {
-        $request->user()->fill($request->validated());
-
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
-    }
-
-    /**
-     * Delete the user's account.
-     */
-    public function destroy(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
+        $validated = $request->validate([
+            'last_name' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'middle_name' => 'nullable|string|max:255',
+            'birthdate' => 'nullable|date',
+            'gender' => 'nullable|in:male,female',
+            'street' => 'nullable|string|max:255',
+            'barangay' => 'nullable|string|max:255',
+            'municipality_city' => 'nullable|string|max:255',
+            'province' => 'nullable|string|max:255',
+            'contact_number' => 'required|string|max:20',
+            'alternative_number' => 'nullable|string|max:20',
+            'email_address' => 'nullable|email|max:255',
+            'civil_status' => 'nullable|string|max:50',
+            'spouse_name' => 'nullable|string|max:255',
+            'spouse_contact_number' => 'nullable|string|max:20',
+            'highest_educational_attainment' => 'nullable|string|max:255',
+            'is_ex_abroad' => 'boolean',
+            'last_country' => 'nullable|string|max:255',
+            'years_abroad' => 'nullable|integer',
+            'application_type' => 'nullable|string|max:50',
+            'earliest_availability' => 'nullable|date',
         ]);
 
-        $user = $request->user();
+        $validated['user_id'] = Auth::id();
 
-        Auth::logout();
+        Profile::create($validated);
 
-        $user->delete();
+        return redirect()->route('dashboard')->with('success', 'Profile created successfully.');
+    }
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+    // Update profile
+    public function update(Request $request, Profile $profile)
+    {
+        //$this->authorize('update', $profile); // Optional if using policies
 
-        return Redirect::to('/');
+        $validated = $request->validate([
+            'last_name' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'middle_name' => 'nullable|string|max:255',
+            'birthdate' => 'nullable|date',
+            'gender' => 'nullable|in:male,female',
+            'street' => 'nullable|string|max:255',
+            'barangay' => 'nullable|string|max:255',
+            'municipality_city' => 'nullable|string|max:255',
+            'province' => 'nullable|string|max:255',
+            'contact_number' => 'required|string|max:20',
+            'alternative_number' => 'nullable|string|max:20',
+            'email_address' => 'nullable|email|max:255',
+            'civil_status' => 'nullable|string|max:50',
+            'spouse_name' => 'nullable|string|max:255',
+            'spouse_contact_number' => 'nullable|string|max:20',
+            'highest_educational_attainment' => 'nullable|string|max:255',
+            'is_ex_abroad' => 'boolean',
+            'last_country' => 'nullable|string|max:255',
+            'years_abroad' => 'nullable|integer',
+            'application_type' => 'nullable|string|max:50',
+            'earliest_availability' => 'nullable|date',
+        ]);
+
+        $profile->update($validated);
+
+        return redirect()->route('dashboard')->with('success', 'Profile updated successfully.');
     }
 }
