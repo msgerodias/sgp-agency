@@ -29,7 +29,7 @@
                 <label class="block font-semibold mb-2">Earliest Date to fly</label>
                 <input type="date" name="earliest_fly_date" class="border rounded p-2 w-full">
             </div>
-        <!--
+        
             {{-- Call Interview Time --}}
             <div class="mb-4">
                 <label class="block font-semibold mb-2">Available time for call interview</label>
@@ -39,7 +39,7 @@
                 </select>
                 <input type="time" name="call_time_other" id="call_time_other" class="border rounded p-2 w-full mt-2 hidden">
             </div>
-        -->
+        
             {{-- Referred By --}}
             <div class="mb-4">
                 <label class="block font-semibold mb-2">Referred By</label>
