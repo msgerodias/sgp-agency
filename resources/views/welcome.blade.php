@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -168,14 +169,14 @@
                                 <div class="w-12 h-12 flex items-center justify-center bg-yellow-500 text-gray-900 rounded-full flex-shrink-0">
                                     <i class="fab fa-facebook-f text-xl"></i>
                                 </div>
-                                <div class="ml-6 text-left">
+                                <a href="https://www.facebook.com/profile.php?id=61579126607618" target="_blank" class="ml-6 text-left"> 
                                     <h3 class="text-lg font-semibold text-yellow-500">Facebook</h3>
-                                    <p class="text-gray-300">Visit our Facebook Page</p>
-                                </div>
+                                    <p class="text-gray-300">Secure Global Placements</p>
+                                </a>
                             </div>
                         </a>
 
-                        <a href="tel:+639XXXXXXXXX" class="block">
+                        <a href="tel:+639271550757" class="block">
                             <div class="flex items-center p-6 bg-gray-800 rounded-lg shadow-xl border border-yellow-500 transition duration-300 ease-in-out hover:bg-gray-700">
                                 <div class="w-12 h-12 flex items-center justify-center bg-yellow-500 text-gray-900 rounded-full flex-shrink-0">
                                     <i class="fas fa-phone-alt text-xl"></i>
@@ -194,7 +195,7 @@
                                 </div>
                                 <div class="ml-6 text-left">
                                     <h3 class="text-lg font-semibold text-yellow-500">Email</h3>
-                                    <p class="text-gray-300">youremail@example.com</p>
+                                    <p class="text-gray-300">sgp.cpmsi@gmail.com</p>
                                 </div>
                             </div>
                         </a>
