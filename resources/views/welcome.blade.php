@@ -161,7 +161,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-yellow-500 mb-12">Contact Us</h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
+                
                     <div class="space-y-6">
                         <a href="https://facebook.com/YOUR_PAGE" target="_blank" class="block">
                             <div class="flex items-center p-6 bg-gray-800 rounded-lg shadow-xl border border-yellow-500 transition duration-300 ease-in-out hover:bg-gray-700">
@@ -182,7 +182,7 @@
                                 </div>
                                 <div class="ml-6 text-left">
                                     <h3 class="text-lg font-semibold text-yellow-500">Phone</h3>
-                                    <p class="text-gray-300">+63 9XX XXX XXXX</p>
+                                    <p class="text-gray-300">+63 927 1550757</p>
                                 </div>
                             </div>
                         </a>
